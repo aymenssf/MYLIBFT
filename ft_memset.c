@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 16:33:18 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/01 10:34:12 by aassaf           ###   ########.fr       */
+/*   Created: 2023/11/01 10:35:53 by aassaf            #+#    #+#             */
+/*   Updated: 2023/11/01 20:55:54 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-size_t ft_strlen(const char *s)
+void *memset(void *s, int c, size_t n)
 {
-    int i;
-    while(s[i])
+    // size_t i;
+    unsigned char *p = s;
+
+    // i = 0;
+    
+    while(n > 0)
     {
-        i++;
+        if(*(p) == 0)
+            break;
+        *p = c;
+        p++;
+        n--;
     }
-    return (i);
+    return(p);
+}
+
+#include <stdio.h>
+int main()
+{
+    char s[] = "2222";
+    memset(s, 9, sizeof(int) * 3);
+    printf("%d\t%d\t%d", s[0], s[1], s[2]);
 }
