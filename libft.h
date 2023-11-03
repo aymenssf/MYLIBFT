@@ -6,7 +6,7 @@
 /*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:42:07 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/03 12:10:55 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/03 12:12:36 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,5 @@ int ft_tolower(int c);
 int ft_toupper(int c);
 char *ft_strchr(const char *s, int c);
 char *ft_strrchr(const char *s, int c);
+int ft_strncmp(const char *s1, const char *s2, size_t n);
 #endif
