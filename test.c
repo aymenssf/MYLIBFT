@@ -2,8 +2,9 @@
 #include <string.h>
 int main ()
 {
-    char dest[] = "we ";
-    char src[] = "are the chaaampion";
-    size_t n = 4;
-    printf("%zu", strlcat(dest, src, n));
+    char s[] = "SBAAAa3";
+    size_t n = 6;
+    int c = 'a';
+    void *res = memchr(s, c, n);
+    printf("%s", (char *)res);
 }
