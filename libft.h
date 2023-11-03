@@ -6,7 +6,7 @@
 /*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:42:07 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/03 11:12:04 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/03 12:10:55 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ size_t ft_strlcpy(char *dst, const char *src, size_t size);
 size_t ft_strlcat(char *dst, const char *src, size_t size);
 int ft_tolower(int c);
 int ft_toupper(int c);
-char *strchr(const char *s, int c);
+char *ft_strchr(const char *s, int c);
+char *ft_strrchr(const char *s, int c);
 #endif
