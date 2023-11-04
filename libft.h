@@ -6,7 +6,7 @@
 /*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:42:07 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/03 22:34:58 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/04 12:38:31 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 # define LIBFT_H
 #include <stddef.h>
 
+/*  REMOVE LATER   */
+
+# define RED		"\033[31m"
+# define GREEN		"\033[32m"
+# define DEFAULT	"\033[0m"
+# define BLUE		"\033[0;34m"
+/*********************/
 typedef long unsigned int size_t;
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -35,5 +42,6 @@ int ft_strncmp(const char *s1, const char *s2, size_t n);
 void *ft_memchr(const void *s, int c, size_t n);
 int ft_memcmp(const void *s1, const void *s2, size_t n);
 char *ft_strnstr(const char *haystack, const char *needle, size_t n);
+int ft_atoi(const char *str);
 
 #endif
