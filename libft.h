@@ -6,14 +6,16 @@
 /*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:42:07 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/04 12:38:31 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/04 14:15:21 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-#include <stddef.h>
 
+// # include <stddef.h>
+# include <unistd.h>
+# include <stdlib.h>
 /*  REMOVE LATER   */
 
 # define RED		"\033[31m"
@@ -21,7 +23,6 @@
 # define DEFAULT	"\033[0m"
 # define BLUE		"\033[0;34m"
 /*********************/
-typedef long unsigned int size_t;
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -43,5 +44,6 @@ void *ft_memchr(const void *s, int c, size_t n);
 int ft_memcmp(const void *s1, const void *s2, size_t n);
 char *ft_strnstr(const char *haystack, const char *needle, size_t n);
 int ft_atoi(const char *str);
+char *f_strdup(const char *s);
 
 #endif
