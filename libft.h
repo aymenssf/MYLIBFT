@@ -6,7 +6,7 @@
 /*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:42:07 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/04 14:15:21 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/05 13:18:29 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 // # include <stddef.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <string.h>
 /*  REMOVE LATER   */
 
 # define RED		"\033[31m"
@@ -44,6 +45,7 @@ void *ft_memchr(const void *s, int c, size_t n);
 int ft_memcmp(const void *s1, const void *s2, size_t n);
 char *ft_strnstr(const char *haystack, const char *needle, size_t n);
 int ft_atoi(const char *str);
-char *f_strdup(const char *s);
+char *ft_strdup(const char *s);
+void *ft_calloc(size_t num_elements, size_t element_size);
 
 #endif

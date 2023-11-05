@@ -6,11 +6,12 @@
 /*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:33:18 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/02 21:47:59 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/04 14:15:05 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 size_t ft_strlen(const char *s)
 {
     size_t i;
