@@ -17,17 +17,13 @@ void *ft_calloc(size_t num_elements, size_t element_size)
         size_t     i;
         char    *ptr;
 
-	i  = 0;
+	    i  = 0;
         
         if(num_elements == 0 || element_size == 0)
                 return(NULL);
         ptr = (char *)malloc(num_elements * sizeof(element_size));
-        while(ptr != NULL && i < (num_elements * element_size))
-        {
-                ptr[i] = 0;
-                i++;
-        }
-        return((void *)ptr);
+        ft_bzero(ptr, (num_elements * element_size));
+        return(ptr);
 }
 
 /* int main() {

@@ -15,13 +15,12 @@
 void    ft_bzero(void *s, size_t size)
 {
     memset(s, '\0', size);
-
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 int main()
 {
     char s[] = "222";
     bzero(s, sizeof(char) * 3);
     printf("%d\t%d\t%d", s[0], s[1], s[2]);
-}
+} */
