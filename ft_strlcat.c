@@ -6,7 +6,7 @@
 /*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 19:05:52 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/02 21:52:20 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/06 12:49:06 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
         return (ft_strlen(dst));
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 int main ()
 {
 	char dest[20] = "we ";
 	char src[] = "arewelc";
 	printf("%zu\n", ft_strlcat (dest, src, 6));
         printf("%s",dest);
-}
+} */
