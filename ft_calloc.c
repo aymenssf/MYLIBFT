@@ -6,7 +6,7 @@
 /*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 18:19:11 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/05 14:02:01 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/06 11:26:19 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,27 +29,20 @@ void *ft_calloc(size_t num_elements, size_t element_size)
 /* int main() {
     int num_elements = 5;
     int *array;
-
-    // Allocate memory for an array of integers
     array = (int *)ft_calloc(num_elements, 1);
 
     if (array != NULL) {
-        // Initialize the array elements
         for (int i = 0; i < num_elements; ++i) {
             array[i] = i * 10;
         }
-
-        // Print the initialized elements of the array
         printf("Initialized Array: ");
         for (int i = 0; i < num_elements; ++i) {
             printf("%d ", array[i]);
         }
         printf("\n");
-
-        // Don't forget to free the allocated memory when you're done
         free(array);
     } else {
-        printf("Memory allocation failed.\n");
+        printf("allocation failed.\n");
     }
 
     return 0;
