@@ -6,7 +6,7 @@
 /*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:42:07 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/05 13:18:29 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/06 11:27:36 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,5 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t n);
 int ft_atoi(const char *str);
 char *ft_strdup(const char *s);
 void *ft_calloc(size_t num_elements, size_t element_size);
-
+char *ft_substr(char const *s, unsigned int start, size_t len);
 #endif
