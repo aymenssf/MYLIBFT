@@ -31,11 +31,11 @@ char *ft_strtrim(char const *s1, char const *set)
         while ((ft_strchr(set, s1[start])))
             start++;
         end = ft_strlen(s1) - 1;
-        while ((ft_isalnum(s1[end]) == 0) && (ft_strchr(set, s1[end])))
+        while ((ft_strchr(set, s1[end])))
             end--;
         new_len = end - start;
-        ptr = (char *)malloc(new_len) + 1;
-        while(i < new_len)
+        ptr = (char *)malloc(new_len + 1);
+        while(i <= new_len)
         {
             ptr[i] = s1[start];
             i++;
@@ -46,11 +46,11 @@ char *ft_strtrim(char const *s1, char const *set)
     return (ptr);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 #include <string.h>
 int main()
 {
-    char str[] = "  *aymen";
-    char s[] = "*";
+    char str[] = "   * **aymen ** *    ";
+    char s[] = " ";
     printf("%s", ft_strtrim(str, s));
-}
+} */
