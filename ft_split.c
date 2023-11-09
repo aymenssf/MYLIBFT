@@ -3,33 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:17:35 by marvin            #+#    #+#             */
-/*   Updated: 2023/11/08 13:17:35 by marvin           ###   ########.fr       */
+/*   Updated: 2023/11/09 21:45:06 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+
 char **ft_split(char const *s, char c)
 {
         size_t      i;
         size_t len;
-        char **str;
-
-        len = ft_strlen(s) - 1;
-
+        char **arr;
+        char *str;
+        size_t num_substrings;
+        
+        i = 0;
+        len = 0;
+        num_substrings = 0;  
         if(!s)
-                return (NULL);
-
-        str = (char **)malloc(len * sizeof(s));
+                return (NULL);   
         while(s[i])
         {
-                str = ft_strdup((char *)s[i]);
-                str = c;
+                if(s[i] == c)
+                        num_substrings++;
                 i++;
         }
-        str = '\0';
+        arr = (char **)malloc((num_substrings + 2) * sizeof(char *));
+        len = ft_strlen(s) - 1;
+        while(s[i])
+        {
+                if()
+        }
+        
         return (str);
 }
 
