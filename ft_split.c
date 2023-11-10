@@ -12,6 +12,26 @@
 
 #include "libft.h"
 
+int size_substr(char const *s, char c)
+{
+        int     i;
+        int     size_substr;
+
+        i = 0;
+        size_substr = 0;
+        while(s[i])
+        {
+                if(s[i] == c)
+                        i++;
+                else
+                {
+                        size_substr++;
+                        while(s[i] != c && s[i])
+                                i++;
+                }
+                return (size_substr);
+        }        
+}
 
 char **ft_split(char const *s, char c)
 {
@@ -26,18 +46,21 @@ char **ft_split(char const *s, char c)
         num_substrings = 0;  
         if(!s)
                 return (NULL);   
-        while(s[i])
-        {
-                if(s[i] == c)
-                        num_substrings++;
-                i++;
-        }
+
         arr = (char **)malloc((num_substrings + 2) * sizeof(char *));
         len = ft_strlen(s) - 1;
+        size_t start_sub;
+        size_t j;
+        size_t len_sub;
+
+        start_sub = 0;
+        j = 0;
         while(s[i])
         {
-                if()
+            if(s[i] == c || s[i] == '\0')
+                    len_sub = 
         }
+
         
         return (str);
 }
