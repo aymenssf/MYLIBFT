@@ -6,7 +6,7 @@
 /*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 21:40:10 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/04 11:31:10 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/06 19:37:59 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char    *ft_strnstr(const char *haystack, const char *needle, size_t n)
         return (NULL);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 #include <strings.h>
 int main()
 {
@@ -41,4 +41,4 @@ int main()
         const char	str[20] = "la perl";
 	printf ("%s", ft_strnstr (str, to_find, 7));
 	// printf ("\n%s", strnstr (str, to_find, 2));       
-}
+} */
