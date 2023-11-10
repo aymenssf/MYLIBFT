@@ -6,7 +6,7 @@
 /*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:17:35 by marvin            #+#    #+#             */
-/*   Updated: 2023/11/10 18:38:29 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/10 21:54:59 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,12 @@ char *copysubstr(char const *s, char c)
         substr = (char *)malloc(sizeof(len + 1));
         if(substr != NULL)
         {
-                while(substr[len] && len > i)
+                while(substr[i] && len > i)
                 {
                         substr[i] = s[i];
+                        i++;
                 }
-                substr[len] == '\0';
+                substr[i] = '\0';
         }
         return(substr);
 }
@@ -64,7 +65,8 @@ char **ft_split(char const *s, char c)
         totsubstr = 0;
         totsubstr = count_substr(s, c);
         char **arr;
-        arr = (char **)malloc((totsubstr + 2) * sizeof(char *));
+        
+        arr = (char **)malloc((totsubstr + 1) * sizeof(char *));
         if(arr != NULL)
         {
                 i = 0;
@@ -88,16 +90,43 @@ char **ft_split(char const *s, char c)
 }
 
 #include <stdio.h>
-
 int main()
 {
     char **s;
-    int i  = 0;
-    s = ft_split("  AYMEN-ASSAF ",'-');
-    //printf("%d\n",strings[0]);
-     while (s[i] != NULL) {
+    int i = 0;
+    
+    // Test case 1
+    s = ft_split("        Hello-World", '-');
+    printf("Test Case 1:\n");
+    while (s[i] != NULL)
+    {
         printf("%s\n", s[i]);
         i++;
     }
+    
+    // Free allocated memory
+    for (i = 0; s[i] != NULL; i++)
+    {
+        free(s[i]);
+    }
+    free(s);
+
+    // Test case 2
+    i = 0;
+    s = ft_split("       This,is,a,test", ',');
+    printf("\nTest Case 2:\n");
+    while (s[i] != NULL)
+    {
+        printf("%s\n", s[i]);
+        i++;
+    }
+
+    // Free allocated memory
+    for (i = 0; s[i] != NULL; i++)
+    {
+        free(s[i]);
+    }
+    free(s);
+
     return 0;
 }
