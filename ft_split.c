@@ -6,13 +6,13 @@
 /*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:17:35 by marvin            #+#    #+#             */
-/*   Updated: 2023/11/09 21:45:06 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/10 18:38:29 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int size_substr(char const *s, char c)
+int count_substr(char const *s, char c)
 {
         int     i;
         int     size_substr;
@@ -29,40 +29,62 @@ int size_substr(char const *s, char c)
                         while(s[i] != c && s[i])
                                 i++;
                 }
-                return (size_substr);
-        }        
+        }
+        return (size_substr);
+            
 }
-
-char **ft_split(char const *s, char c)
+char *copysubstr(char const *s, char c)
 {
-        size_t      i;
         size_t len;
-        char **arr;
-        char *str;
-        size_t num_substrings;
-        
+        size_t i;
+
         i = 0;
         len = 0;
-        num_substrings = 0;  
-        if(!s)
-                return (NULL);   
-
-        arr = (char **)malloc((num_substrings + 2) * sizeof(char *));
-        len = ft_strlen(s) - 1;
-        size_t start_sub;
-        size_t j;
-        size_t len_sub;
-
-        start_sub = 0;
-        j = 0;
-        while(s[i])
+        while(s[len] && s[len] != c)
         {
-            if(s[i] == c || s[i] == '\0')
-                    len_sub = 
+                len++;
         }
-
+        char *substr;
         
-        return (str);
+        substr = (char *)malloc(sizeof(len + 1));
+        if(substr != NULL)
+        {
+                while(substr[len] && len > i)
+                {
+                        substr[i] = s[i];
+                }
+                substr[len] == '\0';
+        }
+        return(substr);
+}
+char **ft_split(char const *s, char c)
+{
+        int totsubstr;
+        size_t i;
+        totsubstr = 0;
+        totsubstr = count_substr(s, c);
+        char **arr;
+        arr = (char **)malloc((totsubstr + 2) * sizeof(char *));
+        if(arr != NULL)
+        {
+                i = 0;
+                while (*s)
+                {
+                        if(*s == c)
+                                s++;
+                        else
+                        {
+                                arr[i] = copysubstr(s, c);
+                                i++;
+                                while(*s && *s != c)
+                                {
+                                        s++;
+                                }
+                        }
+                }
+                arr[i] = NULL;
+        }
+        return (arr);
 }
 
 #include <stdio.h>
@@ -71,7 +93,7 @@ int main()
 {
     char **s;
     int i  = 0;
-    s = ft_split("  AYMEN  ",' ');
+    s = ft_split("  AYMEN-ASSAF ",'-');
     //printf("%d\n",strings[0]);
      while (s[i] != NULL) {
         printf("%s\n", s[i]);
