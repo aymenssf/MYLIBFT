@@ -13,7 +13,6 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-// # include <stddef.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
@@ -50,4 +49,5 @@ void *ft_calloc(size_t num_elements, size_t element_size);
 char *ft_substr(char const *s, unsigned int start, size_t len);
 char *ft_strtrim(char const *s1, char const *set);
 char **ft_split(char const *s, char c);
+char *ft_itoa(int n);
 #endif
