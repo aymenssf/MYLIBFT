@@ -40,16 +40,16 @@ char *copysubstr(char const *s, char c)
 
         i = 0;
         len = 0;
+        while(*s == ' ')
+                s++;
         while(s[len] && s[len] != c)
-        {
                 len++;
-        }
         char *substr;
         
-        substr = (char *)malloc(sizeof(len + 1));
+        substr = (char *)malloc(len + 1);
         if(substr != NULL)
         {
-                while(substr[i] && len > i)
+                while(i < len)
                 {
                         substr[i] = s[i];
                         i++;
@@ -60,7 +60,7 @@ char *copysubstr(char const *s, char c)
 }
 char **ft_split(char const *s, char c)
 {
-        int totsubstr;
+        size_t totsubstr;
         size_t i;
         totsubstr = 0;
         totsubstr = count_substr(s, c);
@@ -70,13 +70,26 @@ char **ft_split(char const *s, char c)
         if(arr != NULL)
         {
                 i = 0;
-                while (*s)
+                while (*s && i < totsubstr)
                 {
                         if(*s == c)
                                 s++;
                         else
                         {
                                 arr[i] = copysubstr(s, c);
+                                if(arr == NULL)
+                                {
+                                        size_t j;
+
+                                        j = 0;
+                                        while(j < i)
+                                        {
+                                                free(arr[j]);
+                                                j++;
+                                        }
+                                        free(arr);
+                                        return (NULL);
+                                }
                                 i++;
                                 while(*s && *s != c)
                                 {
@@ -113,7 +126,7 @@ int main()
 
     // Test case 2
     i = 0;
-    s = ft_split("       This,is,a,test", ',');
+    s = ft_split("This,is,a,test", ',');
     printf("\nTest Case 2:\n");
     while (s[i] != NULL)
     {
