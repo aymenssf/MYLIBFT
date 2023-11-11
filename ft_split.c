@@ -5,7 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 13:17:35 by marvin            #+#    #+#             */
+/*   Created: 2023/11/08 13:17:35 by aassaf            #+#    #+#             */
 /*   Updated: 2023/11/10 21:54:59 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -102,7 +102,7 @@ char **ft_split(char const *s, char c)
         return (arr);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 int main()
 {
     char **s;
@@ -142,4 +142,4 @@ int main()
     free(s);
 
     return 0;
-}
+} */
