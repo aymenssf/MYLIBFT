@@ -32,7 +32,7 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
         return(str);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 char	ft_strmapi_ft(unsigned int	i, char	c)
 {
 	return (c + i);
@@ -53,4 +53,4 @@ int	main(int argc, char **argv)
 	printf("%s\n", ft_strmapi(str3, ft_strmapi_ft));
 	printf("%s\n", ft_strmapi(0, ft_strmapi_ft));
 	return (EXIT_SUCCESS);
-}
+} */
