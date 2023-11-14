@@ -6,7 +6,7 @@
 /*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:42:07 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/12 13:21:37 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/14 11:48:12 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@
 # define DEFAULT	"\033[0m"
 # define BLUE		"\033[0;34m"
 /*********************/
+typedef struct s_list
+{
+void *content;
+struct s_list *next;
+} t_list;
+
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
