@@ -6,7 +6,7 @@
 /*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:42:07 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/14 11:48:12 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/15 17:45:14 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,5 @@ void ft_putchar_fd(char c, int fd);
 void ft_putstr_fd(char *s, int fd);
 void ft_putendl_fd(char *s, int fd);
 void ft_putnbr_fd(int n, int fd);
+t_list *ft_lstnew(void *content);
 #endif
