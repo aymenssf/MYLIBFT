@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 12:12:01 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/03 12:15:26 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/17 13:17:21 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
@@ -29,7 +30,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 /* #include <stdio.h>
 #include <string.h>
-int main()
+
+int	main(void)
 {
 	char s1[] = "ayMen";
 	char s2[] = "aYmenare";

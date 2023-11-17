@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 03:15:27 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/11 18:28:12 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/17 13:04:06 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,19 +53,19 @@ char	*ft_itoa(int n)
 		res[0] = '-';
 	return (res);
 }
-/* 
+/*
 #include <stdio.h>
 
 int	main(void) {
-    	int test_cases[] = {123, -456, 0, 987654321, -2147483648};
-    	int num_tests = sizeof(test_cases) / sizeof(test_cases[0]);
+		int test_cases[] = {123, -456, 0, 987654321, -2147483648};
+		int num_tests = sizeof(test_cases) / sizeof(test_cases[0]);
 	int i = 0;
-    	while (i < num_tests) {
-        	int num = test_cases[i];
-        	char *result = ft_itoa(num);
+		while (i < num_tests) {
+			int num = test_cases[i];
+			char *result = ft_itoa(num);
 		printf("Result for %d: %s\n", num, result);
 		i++;
 		free(result);
-    	}
-    	return (0);
+		}
+		return (0);
 } */

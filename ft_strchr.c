@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 11:09:20 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/03 13:47:15 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/17 13:05:55 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ char	*ft_strchr(const char *s, int c)
 /* #include <stdio.h>
 int	main(void)
 {
-        char t[] = "aymen";
-        int c = '\0';
-        char *result = ft_strchr(t, c);
-        printf("%s", result);
+		char t[] = "aymen";
+		int c = '\0';
+		char *result = ft_strchr(t, c);
+		printf("%s", result);
 } */

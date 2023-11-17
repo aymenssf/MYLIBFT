@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:30:41 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/16 15:44:00 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/17 13:33:01 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void ft_lstiter(t_list *lst, void (*f)(void *))
+
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-        
-        if(!lst || !f)
-                return ;
-        t_list *tmp;
-   
-        tmp = lst;
-        while(tmp)
-        {
-                f(tmp -> content);
-                tmp = tmp ->next;
-        }
+	t_list	*tmp;
+
+	if (!lst || !f)
+		return ;
+	tmp = lst;
+	while (tmp)
+	{
+		f(tmp->content);
+		tmp = tmp->next;
+	}
 }
 
 /* #include <stdio.h>
@@ -55,7 +55,6 @@ int	main(void)
 		printf("\033[92mTest %2.i - OK \033[0m\n", 1);
 	else
 		printf("\033[91mTest %2.i - KO \033[0m\n", 1);
-
 	elem = ft_lstnew(str1);
 	elem->next = ft_lstnew(str2);
 	elem->next->next = ft_lstnew(str3);
@@ -70,7 +69,8 @@ int	main(void)
 	if (!strcmp(elem->next->next->content, str3) \
 		&& !strcmp(elem->next->next->next->content, "Hello") \
 		&& !strcmp(elem->next->next->next->next->next->next->content, "Hello") \
-		&& !strcmp(elem->next->next->next->next->next->next->next->next->next->content, "Hello"))
+		&& !strcmp(elem->next->next->next->next->next->next->next->next->next->content,
+			"Hello"))
 		printf("\033[92mTest %2.i - OK \033[0m\n", 2);
 	else
 		printf("\033[91mTest %2.i - KO \033[0m\n", 2);
@@ -84,14 +84,12 @@ int	main(void)
 	free(elem->next->next);
 	free(elem->next);
 	free(elem);
-
 	elem = NULL;
 	ft_lstiter(elem, f);
 	if (!elem)
 		printf("\033[92mTest %2.i - OK \033[0m\n", 3);
 	else
 		printf("\033[91mTest %2.i - KO \033[0m\n", 3);
-
 	elem = ft_lstnew(str1);
 	ft_lstiter(elem, f);
 	if (!strcmp(elem->content, "Hello"))
@@ -99,7 +97,6 @@ int	main(void)
 	else
 		printf("\033[91mTest %2.i - KO \033[0m\n", 4);
 	free(elem);
-
 	elem = ft_lstnew(str1);
 	elem->next = ft_lstnew(str2);
 	elem->next->next = ft_lstnew(str3);
@@ -113,7 +110,6 @@ int	main(void)
 	free(elem->next->next);
 	free(elem->next);
 	free(elem);
-
 	return (0);
 }
  */

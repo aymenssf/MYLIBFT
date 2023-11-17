@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aassaf <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 11:09:34 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/03 13:06:54 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/17 13:06:38 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int	ft_toupper(int c)
 /* #include <stdio.h>
 int	main(void)
 {
-        char c = 'c';
-        printf("%c", ft_toupper(c));
+		char c = 'c';
+		printf("%c", ft_toupper(c));
 } */
