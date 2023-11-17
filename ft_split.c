@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int count_substr(char const *s, char c)
+static int count_substr(char const *s, char c)
 {
         int     i;
         int     size_substr;
@@ -33,7 +33,7 @@ int count_substr(char const *s, char c)
         return (size_substr);
             
 }
-char *copysubstr(char const *s, char c)
+static char *copysubstr(char const *s, char c)
 {
         size_t len;
         size_t i;
