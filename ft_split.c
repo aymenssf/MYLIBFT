@@ -60,14 +60,17 @@ static char	*copysubstr(char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
+	size_t subs;
 	size_t	i;
 	char	**arr;
 	size_t	j;
 
-	if ((arr = (char **)malloc((count_substr(s, c) + 1) * sizeof(char *))) == NULL)
+	subs = count_substr(s, c);
+	arr = (char **)malloc(( subs + 1) * sizeof(char *));
+	if(arr == NULL)
 		return (NULL);
-	i = -1;
-	while (*s && ++i < (size_t)count_substr(s, c))
+	i = 0;
+	while (*s && i < subs)
 	{
 		if (*s == c)
 			s++;
@@ -76,21 +79,25 @@ char	**ft_split(char const *s, char c)
 			arr[i] = copysubstr(s, c);
 			if (arr[i] == NULL)
 			{
-				j = -1;
-				while (++j < i)
+				j = 0;
+				while (j < i)
+				{
 					free(arr[j]);
+					j++;					
+				}
 				free(arr);
 				return (NULL);
 			}
 			while (*s && *s != c)
 				s++;
 		}
+		i++;
 	}
 	arr[i] = NULL;
 	return (arr);
 }
 
-/* #include <stdio.h>
+#include <stdio.h>
 int	main(void)
 {
 	char **s;
@@ -130,4 +137,4 @@ int	main(void)
 	free(s);
 
 	return (0);
-} */
+}
