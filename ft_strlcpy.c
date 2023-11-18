@@ -23,19 +23,20 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	{
 		dst[i] = src[i];
 		i++;
-		size--;
 	}
-	*dst = '\0';
+	dst[i] = '\0';
 	return (ft_strlen(src));
 }
 
-/* #include <stdio.h>
-
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 int	main(void)
 {
 	char src[] = "DONT PANIC";
 	char dest[10] = "";
-	unsigned int n = 7;
+	unsigned int n = 0;
 
-	printf("%zu", ft_strlcpy(dest, src, n));
-} */
+	printf("%zu", strlcpy(dest, src, n));
+	printf("%s", dest);
+}
