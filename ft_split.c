@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/08 13:17:35 by aassaf            #+#    #+#             */
+/*   Updated: 2023/11/19 22:07:37 by aassaf           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 static int	count_substr(char const *s, char c)
 {
@@ -44,33 +56,44 @@ static char	*copysubstr(char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
+	size_t	totsubstr;
 	size_t	i;
 	char	**arr;
 	size_t	j;
 
-	if ((arr = (char **)malloc((count_substr(s, c) + 1) * sizeof(char *))) == NULL)
-		return (NULL);
-	i = -1;
-	while (*s && ++i < (size_t)count_substr(s, c))
+	totsubstr = 0;
+	totsubstr = count_substr(s, c);
+	arr = (char **)malloc((totsubstr + 1) * sizeof(char *));
+	if (arr != NULL)
 	{
-		if (*s == c)
-			s++;
-		else
+		i = 0;
+		while (*s && i < totsubstr)
 		{
-			arr[i] = copysubstr(s, c);
-			if (arr[i] == NULL)
-			{
-				j = -1;
-				while (++j < i)
-					free(arr[j]);
-				free(arr);
-				return (NULL);
-			}
-			while (*s && *s != c)
+			if (*s == c)
 				s++;
+			else
+			{
+				arr[i] = copysubstr(s, c);
+				if (arr == NULL)
+				{
+					j = 0;
+					while (j < i)
+					{
+						free(arr[j]);
+						j++;
+					}
+					free(arr);
+					return (NULL);
+				}
+				i++;
+				while (*s && *s != c)
+				{
+					s++;
+				}
+			}
 		}
+		arr[i] = NULL;
 	}
-	arr[i] = NULL;
 	return (arr);
 }
 
@@ -95,8 +118,18 @@ int	main(void)
 	free(s);
 	// Test case 2
 	i = 0;
-	@@ -130,4 +137,4 @@
+	s = ft_split("This,is,a,test", ',');
+	printf("\nTest Case 2:\n");
+	while (s[i] != NULL)
+	{
+		printf("%s\n", s[i]);
+		i++;
+	}
+	// Free allocated memory
+	for (i = 0; s[i] != NULL; i++)
+	{
+		free(s[i]);
+	}
 	free(s);
-
 	return (0);
 } */
