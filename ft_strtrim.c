@@ -6,7 +6,7 @@
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 01:30:40 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/17 13:06:21 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/19 21:31:04 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,40 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
-	char	*ptr;
-	size_t	new_len;
-	size_t	start;
-	size_t	end;
-
-	ptr = NULL;
-	i = 0;
-	if (s1 == NULL)
+	size_t	len;
+	if (!s1 || !set)
 		return (NULL);
-	if (s1[i])
-	{
-		start = 0;
-		while ((ft_strchr(set, s1[start])))
-			start++;
-		end = ft_strlen(s1) - 1;
-		while ((ft_strchr(set, s1[end])))
-			end--;
-		new_len = end - start;
-		ptr = (char *)malloc(new_len + 1);
-		while (i <= new_len)
-		{
-			ptr[i] = s1[start];
-			i++;
-			start++;
-		}
-		ptr[i] = '\0';
-	}
-	return (ptr);
+	while (*s1 && ft_strchr(set, *s1))
+		++s1;
+	len = ft_strlen(s1);
+	while (len && ft_strchr(set, s1[len]))
+		--len;
+	return (ft_substr(s1, 0, (len + 1)));
 }
 
 /* #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
-int	main(void)
+char *ft_strtrim(char const *s1, char const *set);
+
+int main(void)
 {
-	char str[] = "   * **aymen ** *    ";
-	char s[] = " ";
-	printf("%s", ft_strtrim(str, s));
+    const char *str = "  aymen   ";
+    const char *s = " ";
+
+    char *trimmedStr = ft_strtrim(str, s);
+
+    if (trimmedStr != NULL)
+    {
+        printf("Original String: \"%s\"\n", str);
+        printf("Trimmed String:   \"%s\"\n", trimmedStr);
+
+        free(trimmedStr);
+    }
+    else
+    {
+        printf("Memory allocation failed.\n");
+    }
+
+    return 0;
 } */
