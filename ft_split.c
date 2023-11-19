@@ -6,7 +6,7 @@
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:17:35 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/19 22:07:37 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/19 22:20:29 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,18 @@ static char	*copysubstr(char const *s, char c)
 	}
 	return (substr);
 }
+void free_arr(char **arr, size_t n)
+{
+	size_t i;
 
+	i = 0;
+	while(i < n)
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+}
 char	**ft_split(char const *s, char c)
 {
 	size_t	totsubstr;
@@ -61,39 +72,35 @@ char	**ft_split(char const *s, char c)
 	char	**arr;
 	size_t	j;
 
-	totsubstr = 0;
 	totsubstr = count_substr(s, c);
 	arr = (char **)malloc((totsubstr + 1) * sizeof(char *));
-	if (arr != NULL)
+	if(arr == NULL)
+		return (NULL);
+	i = 0;
+	while (*s && i < totsubstr)
 	{
-		i = 0;
-		while (*s && i < totsubstr)
+		if (*s == c)
+			s++;
+		else
 		{
-			if (*s == c)
-				s++;
-			else
+			arr[i] = copysubstr(s, c);
+			if (arr == NULL)
 			{
-				arr[i] = copysubstr(s, c);
-				if (arr == NULL)
+				j = 0;
+				while (j < i)
 				{
-					j = 0;
-					while (j < i)
-					{
-						free(arr[j]);
-						j++;
-					}
-					free(arr);
-					return (NULL);
+					free(arr[j]);
+					j++;
 				}
-				i++;
-				while (*s && *s != c)
-				{
-					s++;
-				}
+				free(arr);
+				return (NULL);
 			}
+			i++;
+			while (*s && *s != c)
+				s++;
 		}
-		arr[i] = NULL;
 	}
+	arr[i] = NULL;
 	return (arr);
 }
 
