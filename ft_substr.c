@@ -14,23 +14,23 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
 	char	*ptr;
+	size_t	slen;
 
 	if (s == NULL)
 		return (NULL);
-	i = 0;
-	ptr = (char *)malloc(sizeof(len) + 1);
-	if (ptr == NULL)
+	slen = ft_strlen((char *)s);
+	if(start >= slen)
+		return (ft_strdup(""));
+
+	if(slen - start > len)
+		ptr = (char *)malloc((len + 1) * sizeof(char));
+	else
+		ptr = (char *)malloc(sizeof(char) * (slen - start + 1));
+	if(!ptr)
 		return (NULL);
-	while (ptr[i] && i < len)
-	{
-		ptr[i] = s[start];
-		i++;
-		start++;
-	}
-	ptr[i] = '\0';
-	return ((char *)ptr);
+	ft_strlcpy(ptr, s + start, (len + 1));
+	return (ptr);
 }
 
 /* #include <stdio.h>
