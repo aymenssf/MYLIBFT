@@ -19,15 +19,18 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	i = 0;
 	if (!src || !dst)
 		return (0);
-	while (src && i < size)
+	if(size > 0)
 	{
-		dst[i] = src[i];
-		i++;
+		while (src[i] && i < size - 1)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	dst[i] = '\0';
 	return (ft_strlen(src));
 }
-
+/* 
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -39,4 +42,4 @@ int	main(void)
 
 	printf("%zu", strlcpy(dest, src, n));
 	printf("%s", dest);
-}
+} */

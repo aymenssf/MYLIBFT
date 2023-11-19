@@ -23,13 +23,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dstlen = ft_strlen(dst);
 	if (size <= dstlen)
 		return (size + srclen);
-	while (src[i] && i < size)
+	while (src[i] && i < size - dstlen - 1)
 	{
 		dst[dstlen + i] = src[i];
 		i++;
 	}
 	dst[dstlen + i] = '\0';
-	return (ft_strlen(dst));
+	return (dstlen + srclen);
 }
 
 /* #include <stdio.h>
