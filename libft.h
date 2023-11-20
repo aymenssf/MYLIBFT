@@ -6,7 +6,7 @@
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:42:07 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/17 13:13:07 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/20 11:43:02 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
 
 typedef struct s_list
@@ -40,6 +39,7 @@ int					ft_toupper(int c);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
+char				*ft_strjoin(char const *s1, char const *s2);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 char				*ft_strnstr(const char *haystack, const char *needle,
