@@ -6,7 +6,7 @@
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 11:09:20 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/17 13:05:55 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/20 10:24:51 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)&s[i]);
 		i++;
 	}
-	if(s[i] == (char)c)
+	if (s[i] == (char)c)
 		return ((char *)&s[i]);
 	return (0);
 }

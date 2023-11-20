@@ -6,7 +6,7 @@
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:14:38 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/17 13:31:41 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/20 09:47:43 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	if (s1 == s2 || n == 0)
 		return (0);
-	while ((ps1[i] || ps2[i]) && i < n)
+	while (i < n)
 	{
 		if (ps1[i] > ps2[i])
 			return (ps1[i] - ps2[i]);

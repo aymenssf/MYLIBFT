@@ -6,15 +6,17 @@
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:17:35 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/19 22:20:29 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/20 15:47:02 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-static int	count_substr(char const *s, char c)
+
+static size_t	count_substr(char const *s, char c)
 {
-	int	i;
-	int	size_substr;
+	int		i;
+	size_t	size_substr;
+
 	i = 0;
 	size_substr = 0;
 	while (s[i])
@@ -30,51 +32,52 @@ static int	count_substr(char const *s, char c)
 	}
 	return (size_substr);
 }
+
 static char	*copysubstr(char const *s, char c)
 {
 	size_t	len;
 	size_t	i;
 	char	*substr;
+
 	i = 0;
 	len = 0;
-	while (*s == ' ')
-		s++;
 	while (s[len] && s[len] != c)
 		len++;
 	substr = (char *)malloc(len + 1);
-	if (substr != NULL)
+	if (!substr)
+		return (NULL);
+	while (i < len)
 	{
-		while (i < len)
-		{
-			substr[i] = s[i];
-			i++;
-		}
-		substr[i] = '\0';
+		substr[i] = s[i];
+		i++;
 	}
+	substr[i] = '\0';
 	return (substr);
 }
-void free_arr(char **arr, size_t n)
+
+static char	**free_arr(char **arr, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
-	while(i < n)
+	while (i < n)
 	{
 		free(arr[i]);
 		i++;
 	}
 	free(arr);
+	return (NULL);
 }
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	totsubstr;
 	size_t	i;
 	char	**arr;
-	size_t	j;
 
 	totsubstr = count_substr(s, c);
 	arr = (char **)malloc((totsubstr + 1) * sizeof(char *));
-	if(arr == NULL)
+	if (arr == NULL)
 		return (NULL);
 	i = 0;
 	while (*s && i < totsubstr)
@@ -84,17 +87,8 @@ char	**ft_split(char const *s, char c)
 		else
 		{
 			arr[i] = copysubstr(s, c);
-			if (arr == NULL)
-			{
-				j = 0;
-				while (j < i)
-				{
-					free(arr[j]);
-					j++;
-				}
-				free(arr);
-				return (NULL);
-			}
+			if (arr[i] == NULL)
+				return (free_arr(arr, i));
 			i++;
 			while (*s && *s != c)
 				s++;

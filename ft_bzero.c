@@ -6,7 +6,7 @@
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 17:59:12 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/17 13:16:03 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/20 11:32:59 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t size)
 {
-	memset(s, '\0', size);
+	ft_memset(s, 0, size);
 }
 
 /* #include <stdio.h>
