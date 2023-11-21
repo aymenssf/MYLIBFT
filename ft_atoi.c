@@ -6,7 +6,7 @@
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 12:12:42 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/20 10:25:56 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/21 19:13:40 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_atoi(const char *str)
 {
-	long	res;
+	int		res;
 	int		sign;
 
 	res = 0;
@@ -30,15 +30,5 @@ int	ft_atoi(const char *str)
 		res = (res * 10) + (*str - '0');
 		str++;
 	}
-	return ((int)res * sign);
+	return (res * sign);
 }
-
-/* #include <stdio.h>
-#include <stdlib.h>
-
-int main ()
-{
-	char *str = "           -+12342sp24321";
-	printf ("%d", ft_atoi(str));
-	printf ("\n%d", atoi(str));
-} */

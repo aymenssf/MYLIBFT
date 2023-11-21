@@ -6,7 +6,7 @@
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:14:38 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/20 09:47:43 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/21 19:19:49 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-/* #include <stdio.h>
-#include <string.h>
-
-int	main(void)
-{
-	char s1[] = "AyMen";
-	char s2[] = "Ayeenare";
-	printf("%d\n", ft_memcmp(s1, s2, 3));
-	printf("%d", memcmp(s1, s2, 3));
-} */

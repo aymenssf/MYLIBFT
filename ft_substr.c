@@ -6,7 +6,7 @@
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:27:19 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/20 10:49:40 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:54:43 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ft_strlcpy(ptr, s + start, (len + 1));
 	return (ptr);
 }
-
-/* #include <stdio.h>
-int	main(void)
-{
-		char str[] = "Hello World!";
-		size_t len = 7;
-		unsigned int s = 0;
-		printf("%s\n", ft_substr(str, s, len)); // prints "World!"
-} */

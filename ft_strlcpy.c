@@ -6,7 +6,7 @@
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 17:04:37 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/20 10:25:01 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:55:15 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	}
 	return (ft_strlen(src));
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-int	main(void)
-{
-	char src[] = "DONT PANIC";
-	char dest[10] = "";
-	unsigned int n = 0;
-
-	printf("%zu", strlcpy(dest, src, n));
-	printf("%s", dest);
-} */

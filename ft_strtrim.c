@@ -6,7 +6,7 @@
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 01:30:40 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/20 10:24:36 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:54:06 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,30 +25,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		--len;
 	return (ft_substr(s1, 0, (len + 1)));
 }
-
-/* #include <stdio.h>
-#include <stdlib.h>
-
-char	*ft_strtrim(char const *s1, char const *set);
-
-int	main(void)
-{
-	const char *str = "  aymen   ";
-	const char *s = " ";
-
-	char *trimmedStr = ft_strtrim(str, s);
-
-	if (trimmedStr != NULL)
-	{
-		printf("Original String: \"%s\"\n", str);
-		printf("Trimmed String:   \"%s\"\n", trimmedStr);
-
-		free(trimmedStr);
-	}
-	else
-	{
-		printf("Memory allocation failed.\n");
-	}
-
-	return (0);
-} */

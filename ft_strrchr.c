@@ -6,7 +6,7 @@
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 11:58:13 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/17 13:06:19 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:53:21 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-/* #include <stdio.h>
-int	main(void)
-{
-		char t[] = "ayman";
-		int c = 'a';
-		char *result = ft_strrchr(t, c);
-		printf("%s", result);
-} */

@@ -6,7 +6,7 @@
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:14:28 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/20 15:36:51 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:28:03 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ptr[j] = '\0';
 	return (ptr);
 }
-
-//  #include <stdio.h>
-// int	main(void)
-// {
-// 	const char tab[] = "aymen";
-// 	const char s[] = "af";
-// 	printf("%s", ft_strjoin(tab, s));
-// 		// printf("%s", strjoin(tab, s));
-// 		return (0);
-// }

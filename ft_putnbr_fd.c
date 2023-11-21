@@ -6,7 +6,7 @@
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 13:21:10 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/17 13:05:49 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/21 18:41:47 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
+	if (fd < 0)
+		return ;
 	if (n == -2147483648)
 	{
 		ft_putchar_fd('-', fd);
@@ -33,10 +35,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd((n % 10), fd);
 	}
 }
-/*
-
-int	main(void)
-{
-	ft_putnbr_fd((-2147483648), 1);
-	return (0);
-} */

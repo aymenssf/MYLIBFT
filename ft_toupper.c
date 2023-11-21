@@ -6,7 +6,7 @@
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 11:09:34 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/17 13:06:38 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/21 10:59:17 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,3 @@ int	ft_toupper(int c)
 		c -= 32;
 	return (c);
 }
-/* #include <stdio.h>
-int	main(void)
-{
-		char c = 'c';
-		printf("%c", ft_toupper(c));
-} */

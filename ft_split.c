@@ -6,7 +6,7 @@
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:17:35 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/20 15:47:02 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/21 17:57:02 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,40 +97,3 @@ char	**ft_split(char const *s, char c)
 	arr[i] = NULL;
 	return (arr);
 }
-
-/* #include <stdio.h>
-int	main(void)
-{
-	char **s;
-	int i = 0;
-	// Test case 1
-	s = ft_split("        Hello-World", '-');
-	printf("Test Case 1:\n");
-	while (s[i] != NULL)
-	{
-		printf("%s\n", s[i]);
-		i++;
-	}
-	// Free allocated memory
-	for (i = 0; s[i] != NULL; i++)
-	{
-		free(s[i]);
-	}
-	free(s);
-	// Test case 2
-	i = 0;
-	s = ft_split("This,is,a,test", ',');
-	printf("\nTest Case 2:\n");
-	while (s[i] != NULL)
-	{
-		printf("%s\n", s[i]);
-		i++;
-	}
-	// Free allocated memory
-	for (i = 0; s[i] != NULL; i++)
-	{
-		free(s[i]);
-	}
-	free(s);
-	return (0);
-} */

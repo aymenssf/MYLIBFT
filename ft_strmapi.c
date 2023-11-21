@@ -6,7 +6,7 @@
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 18:29:59 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/17 13:06:10 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:39:36 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,26 +31,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
-
-/* #include <stdio.h>
-char	ft_strmapi_ft(unsigned int	i, char	c)
-{
-	return (c + i);
-}
-
-int	main(int argc, char **argv)
-{
-	(void)	argc;
-	(void)	argv;
-	char	str0[] = "Hello world";
-	char	str1[] = "1337 BENGUERIR";
-	char	str2[] = "";
-	char	str3[] = "0000000000";
-
-	printf("%s\n", ft_strmapi(str0, ft_strmapi_ft));
-	printf("%s\n", ft_strmapi(str1, ft_strmapi_ft));
-	printf("%s\n", ft_strmapi(str2, ft_strmapi_ft));
-	printf("%s\n", ft_strmapi(str3, ft_strmapi_ft));
-	printf("%s\n", ft_strmapi(0, ft_strmapi_ft));
-	return (EXIT_SUCCESS);
-} */

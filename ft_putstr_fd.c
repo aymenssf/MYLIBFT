@@ -6,7 +6,7 @@
 /*   By: aassaf <aassaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 02:28:56 by aassaf            #+#    #+#             */
-/*   Updated: 2023/11/17 13:23:16 by aassaf           ###   ########.fr       */
+/*   Updated: 2023/11/21 18:38:11 by aassaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (fd < 0 || s == NULL)
+		return ;
 	while (*s)
 	{
 		ft_putchar_fd(*s++, fd);
